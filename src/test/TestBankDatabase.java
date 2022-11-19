@@ -27,9 +27,13 @@ public class TestBankDatabase {
     }
 
     @Test
+    public void testInvalidAuthenticateUser() {
+        assertFalse(bankdatabase.authenticateUser(12345, 76532));
+    }
+
+    @Test
     public void testAuthenticateUser() {
         assertTrue(bankdatabase.authenticateUser(12345, 54321));
-        assertFalse(bankdatabase.authenticateUser(12345, 76532));
     }
 
     @Test
@@ -48,15 +52,5 @@ public class TestBankDatabase {
         long totalBalance = 1000 * 100;
         assertEquals(bankdatabase.getAvailableBalance(12345).getValore(), availableBalance);
         assertEquals(bankdatabase.getTotalBalance(12345).getValore(), totalBalance);
-    }
-
-    @Test
-    public void testGetAvailableBalance() {
-
-    }
-
-    @Test
-    public void testGetTotalBalance() {
-
     }
 }
