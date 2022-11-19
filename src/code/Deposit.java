@@ -2,6 +2,9 @@ package code;
 // Deposit.java
 // Represents a deposit ATM transaction
 
+import code.Business_logic.DepositSlot;
+import code.Business_logic.Transaction;
+
 public class Deposit extends Transaction
 {
    private double amount; // amount to deposit

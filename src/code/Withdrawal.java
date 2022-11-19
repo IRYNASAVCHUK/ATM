@@ -2,6 +2,9 @@ package code;
 // Withdrawal.java
 // Represents a withdrawal ATM transaction
 
+import code.Business_logic.CashDispenser;
+import code.Business_logic.Transaction;
+
 public class Withdrawal extends Transaction
 {
    private int amount; // amount to withdraw

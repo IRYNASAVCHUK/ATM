@@ -2,6 +2,8 @@ package code;
 // BalanceInquiry.java
 // Represents a balance inquiry ATM transaction
 
+import code.Business_logic.Transaction;
+
 public class BalanceInquiry extends Transaction
 {
    // BalanceInquiry constructor
