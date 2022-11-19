@@ -43,12 +43,14 @@ public class TestEuro {
 
     @Test
     public void testSomma() {
-        
+        Euro euro = euroTest.somma(euroTest2);
+        assertTrue(euro.ugualeA(new Euro(131,75)));
     }
 
     @Test
     public void testSottrai() {
-        
+        Euro euro = euroTest.sottrai(euroTest3);
+        assertTrue(euro.ugualeA(new Euro(100,30)));
     }
 
     @Test
