@@ -3,12 +3,13 @@ package code.GUI;
 // Represents a withdrawal ATM transaction
 
 import code.Business_logic.CashDispenser;
+import code.Business_logic.Euro;
 import code.Business_logic.Transaction;
 import code.Database.BankDatabase;
 
 public class Withdrawal extends Transaction
 {
-   private int amount; // amount to withdraw
+   private Euro amount; // amount to withdraw
    private Keypad keypad; // reference to keypad
    private CashDispenser cashDispenser; // reference to cash dispenser
 
@@ -32,7 +33,7 @@ public class Withdrawal extends Transaction
    public void execute()
    {
       boolean cashDispensed = false; // cash was not dispensed yet
-      double availableBalance; // amount available for withdrawal
+      Euro availableBalance; // amount available for withdrawal
 
       // get references to bank database and screen
       BankDatabase bankDatabase = getBankDatabase(); 
@@ -42,17 +43,17 @@ public class Withdrawal extends Transaction
       do
       {
          // obtain a chosen withdrawal amount from the user 
-         amount = displayMenuOfAmounts();
+         amount = new Euro(displayMenuOfAmounts());
          
          // check whether user chose a withdrawal amount or canceled
-         if ( amount != CANCELED )
+         if (amount.getValore() / 100 != CANCELED)
          {
             // get available balance of account involved
             availableBalance = 
                bankDatabase.getAvailableBalance( getAccountNumber() );
       
             // check whether the user has enough money in the account 
-            if ( amount <= availableBalance )
+            if (amount.getValore() / 100 != CANCELED)
             {   
                // check whether the cash dispenser has enough money
                if ( cashDispenser.isSufficientCashAvailable( amount ) )
