@@ -1,0 +1,52 @@
+package test;
+
+import static org.junit.Assert.*;
+import org.junit.*;
+
+import code.Business_logic.Euro;
+import code.Database.Account;
+import code.Database.BankDatabase;
+
+public class TestBankDatabase {
+
+    private BankDatabase bankdatabase;
+    private Account accounts[]=new Account[1];
+    @Before
+    public void init() {
+       bankdatabase = new BankDatabase();
+       accounts [0] = new Account(12345,54321,new Euro (1000.0), new Euro(1200.0));
+    }
+    @After
+    public void clear() {
+        accounts = null;
+        bankdatabase = null;
+        assertNull(accounts);
+        assertNull(bankdatabase);
+    }
+    
+    @Test
+    public void testAuthenticateUser() {
+        assertTrue(bankdatabase.authenticateUser(12345,54321));
+		assertFalse(bankdatabase.authenticateUser(12345,76532));
+    }
+
+    @Test
+    public void testCredit() {
+
+    }
+
+    @Test
+    public void testDebit() {
+
+    }
+
+    @Test
+    public void testGetAvailableBalance() {
+
+    }
+
+    @Test
+    public void testGetTotalBalance() {
+
+    }
+}
