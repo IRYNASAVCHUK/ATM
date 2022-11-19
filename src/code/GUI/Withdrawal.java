@@ -1,4 +1,4 @@
-package code;
+package code.GUI;
 // Withdrawal.java
 // Represents a withdrawal ATM transaction
 

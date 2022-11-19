@@ -1,4 +1,4 @@
-package code;
+package code.GUI;
 // Deposit.java
 // Represents a deposit ATM transaction
 
