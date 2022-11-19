@@ -7,7 +7,7 @@ import code.Database.Account;
 
 public class TestAccount {
 
-    private Account account;
+private Account account;
 
 @Before
 public void init() {
@@ -24,8 +24,13 @@ public void clear() {
 		assertTrue("pin errato",account.validatePIN(99223));
 	}
 
-	
+    @Test
+	public void testCredit() {
+		Euro euro = new Euro (200.0);
+		account.credit(euro);
+		long totBalance = 4700*100;
+		assertEquals("accredito fallito",account.getTotalBalance().getValore(),totBalance);
+	}
 
-	
 
 }
