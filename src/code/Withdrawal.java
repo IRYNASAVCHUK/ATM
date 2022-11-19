@@ -4,6 +4,7 @@ package code;
 
 import code.Business_logic.CashDispenser;
 import code.Business_logic.Transaction;
+import code.Database.BankDatabase;
 
 public class Withdrawal extends Transaction
 {
